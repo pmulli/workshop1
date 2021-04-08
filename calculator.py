@@ -15,11 +15,14 @@ def calc(operator, num1, num2)->float:
     elif operator == '^':
         calculaton = num1^num2
         #print('^')
- 
+    elif operator == '%':
+        calculaton = num1%num2
+        #print('%')
+
     return calculaton
 
 def captureCalculationFromUser()->float:
-    calcInput = input('Cal? (+,-,x,/,^ A B)')
+    calcInput = input('Cal? (+,-,x,/,^,% A B)')
     calcInputList = calcInput.split()
     operator = calcInputList[0]
     num1 = int(calcInputList[1])
