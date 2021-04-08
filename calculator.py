@@ -2,21 +2,29 @@ def calc(operator, num1, num2)->float:
     calculaton = 0
     if operator == '+':
         calculaton = num1+num2
+        #print('+')
     elif operator == '-':
         calculaton = num1-num2
+        #print('-')
     elif operator == 'x':
         calculaton = num1*num2
+        #print('x')
     elif operator == '/':
         calculaton = num1/num2
-
+        #print('/')
+    elif operator == '^':
+        calculaton = num1^num2
+        #print('^')
+ 
     return calculaton
 
 def captureCalculationFromUser()->float:
-    calcInput = input('Cal? (+/-x/ A B)')
+    calcInput = input('Cal? (+,-,x,/,^ A B)')
     calcInputList = calcInput.split()
     operator = calcInputList[0]
     num1 = int(calcInputList[1])
     num2 = int(calcInputList[2])
+    #print (str(num1) + operator + str(num2) + '=')
     return calc (operator, num1, num2)
 
 def processInstructionsFromFile(filename):
@@ -54,5 +62,5 @@ def processInstructionsFromFile(filename):
     print ("calcSum: " + str(calcSum))
 
 
-#print(captureCalculationFromUser())
-processInstructionsFromFile('step_2.txt')
+print(captureCalculationFromUser())
+#processInstructionsFromFile('step_2.txt')
