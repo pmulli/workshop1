@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>All Films</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>Film</th>
+                <th>Stars</th>
+            </tr>
+            {% for film in filmList %}
+                {% if stars == film.split()[1] or stars == '' %}
+
+                    <tr>
+                        <td>{{ film.split()[0]}}</td>
+                        <td>{{ film.split()[1]}}</td>                    
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </body>
+</html>
